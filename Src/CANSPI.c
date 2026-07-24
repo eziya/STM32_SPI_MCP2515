@@ -72,12 +72,12 @@ bool CANSPI_Initialize(void)
   
   /* Intialize Rx Filter values */
   RXF0reg.RXF0SIDH = 0x00;      
-  RXF0reg.RXF0SIDL = 0x00;      //Starndard Filter
+  RXF0reg.RXF0SIDL = 0x00;      //Standard Filter
   RXF0reg.RXF0EID8 = 0x00;
   RXF0reg.RXF0EID0 = 0x00;
   
   RXF1reg.RXF1SIDH = 0x00;
-  RXF1reg.RXF1SIDL = 0x08;      //Exntended Filter
+  RXF1reg.RXF1SIDL = 0x08;      //Extended Filter
   RXF1reg.RXF1EID8 = 0x00;
   RXF1reg.RXF1EID0 = 0x00;
   
@@ -211,7 +211,7 @@ uint8_t CANSPI_Receive(uCAN_MSG *tempCanMsg)
   if (rxStatus.rxBuffer != 0)
   {
     /* finding buffer which has a message */
-    if ((rxStatus.rxBuffer == MSG_IN_RXB0)|(rxStatus.rxBuffer == MSG_IN_BOTH_BUFFERS))
+    if ((rxStatus.rxBuffer == MSG_IN_RXB0) || (rxStatus.rxBuffer == MSG_IN_BOTH_BUFFERS))
     {
       MCP2515_ReadRxSequence(MCP2515_READ_RXB0SIDH, rxReg.rx_reg_array, sizeof(rxReg.rx_reg_array));
     }
@@ -270,7 +270,7 @@ uint8_t CANSPI_messagesInBuffer(void)
 }
 
 /* check BUS off */
-uint8_t CANSPI_isBussOff(void)
+uint8_t CANSPI_isBusOff(void)
 {
   uint8_t returnValue = 0;
   
