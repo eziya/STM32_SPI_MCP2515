@@ -107,7 +107,7 @@ int main(void)
       txMessage.frame.idType = rxMessage.frame.idType;
       txMessage.frame.id = rxMessage.frame.id;
       txMessage.frame.dlc = rxMessage.frame.dlc;
-      txMessage.frame.data0++;
+      txMessage.frame.data0 = rxMessage.frame.data0 + 1;
       txMessage.frame.data1 = rxMessage.frame.data1;
       txMessage.frame.data2 = rxMessage.frame.data2;
       txMessage.frame.data3 = rxMessage.frame.data3;

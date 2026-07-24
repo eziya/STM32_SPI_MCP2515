@@ -51,7 +51,7 @@ void CANSPI_Sleep(void);
 uint8_t CANSPI_Transmit(uCAN_MSG *tempCanMsg);
 uint8_t CANSPI_Receive(uCAN_MSG *tempCanMsg);
 uint8_t CANSPI_messagesInBuffer(void);
-uint8_t CANSPI_isBussOff(void);
+uint8_t CANSPI_isBusOff(void);
 uint8_t CANSPI_isRxErrorPassive(void);
 uint8_t CANSPI_isTxErrorPassive(void);
 
